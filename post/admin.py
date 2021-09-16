@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Post, Post_comment
+from .models import posts, postsComment, postsLike
 
-admin.site.register(Post)
-admin.site.register(Post_comment)
+admin.site.register(posts)
+admin.site.register(postsComment)
+admin.site.register(postsLike)
+

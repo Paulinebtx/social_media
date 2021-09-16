@@ -18,7 +18,7 @@ from django.urls import path
 from rest_framework import routers
 from django.conf.urls import include
 from user import views as user_views
-from post.views import PostViewsets, Post_commentViewsets
+from post.views import postsViewsets, postsCommentViewsets, postsLikeViewsets
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -26,8 +26,9 @@ from rest_framework_simplejwt.views import (
 
 
 router = routers.DefaultRouter()
-router.register(r'post', PostViewsets, 'post')
-router.register(r'post_comment', Post_commentViewsets, 'post_comment')
+router.register(r'posts', postsViewsets, 'posts')
+router.register(r'postsComment', postsCommentViewsets, 'postsComment')
+router.register(r'postsLike', postsLikeViewsets, 'postsLike')
 
 
 

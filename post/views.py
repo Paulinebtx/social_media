@@ -1,13 +1,17 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import postSerializer,post_commentSerializer
-from .models import Post, Post_comment
+from .serializers import postsSerializer, postsCommentSerializer, postsLikeSerializer
+from .models import posts, postsComment, postsLike
 
 
-class PostViewsets(viewsets.ModelViewSet):
-    serializer_class = postSerializer
-    queryset = Post.objects.all()
+class postsViewsets(viewsets.ModelViewSet):
+    serializer_class = postsSerializer
+    queryset = posts.objects.all()
 
-class Post_commentViewsets(viewsets.ModelViewSet):
-    serializer_class = post_commentSerializer
-    queryset = Post_comment.objects.all()
+class postsCommentViewsets(viewsets.ModelViewSet):
+    serializer_class = postsCommentSerializer
+    queryset = postsComment.objects.all()
+
+class postsLikeViewsets(viewsets.ModelViewSet):
+    serializer_class = postsLikeSerializer
+    queryset = postsLike.objects.all()
